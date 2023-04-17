@@ -4,6 +4,7 @@ Base settings to build other settings files upon.
 from pathlib import Path
 
 import environ
+import os
 
 BASE_DIR = Path(__file__).resolve(strict=True).parent.parent.parent
 # yeager_ai/
@@ -40,9 +41,16 @@ LOCALE_PATHS = [str(BASE_DIR / "locale")]
 # https://docs.djangoproject.com/en/dev/ref/settings/#databases
 
 DATABASES = {
-    "default": env.db(engine="django.db.backends.postgresql"),
+    "default": {'ENGINE':"django.db.backends.postgresql",
+                'NAME': 'project',
+                'USER': 'postgres',
+                'PASSWORD': 'nehecode',
+                'HOST': '127.0.0.1',
+                'PORT': '5432',
+    }
 }
 DATABASES["default"]["ATOMIC_REQUESTS"] = True
+
 # https://docs.djangoproject.com/en/stable/ref/settings/#std:setting-DEFAULT_AUTO_FIELD
 DEFAULT_AUTO_FIELD = "django.db.models.BigAutoField"
 
@@ -330,9 +338,9 @@ SOCIALACCOUNT_PROVIDERS = {
 
 # STRIPE
 STRIPE_LIVE_SECRET_KEY = (
-    ""  # os.environ.get("STRIPE_LIVE_SECRET_KEY", "<your secret key>")
+   os.environ.get("STRIPE_LIVE_SECRET_KEY", "sk_test_XXXXXXXXXX")
 )
-STRIPE_TEST_SECRET_KEY = "xxxxx"  # os.environ.get("STRIPE_TEST_SECRET_KEY", "")
+STRIPE_TEST_SECRET_KEY = os.environ.get("STRIPE_TEST_SECRET_KEY", "sk_test_XXXXXXXXXX")
 STRIPE_LIVE_MODE = False  # Change to True in production
 DJSTRIPE_WEBHOOK_SECRET = "xxxxxxxx"  # Get it from the section in the Stripe dashboard where you added the webhook endpoint
 DJSTRIPE_USE_NATIVE_JSONFIELD = (
