@@ -310,15 +310,15 @@ SPECTACULAR_SETTINGS = {
 SOCIALACCOUNT_PROVIDERS = {
     "discord": {
         "APP": {
-            "client_id": "1093997215409770587",
-            "secret": "799cd007562aa52db7ed469048f10ca778b27ba9ccc399dd1b1b9d6f46ad7b8e",
+            "client_id": "xxxxxxx",
+            "secret": "xxxxxxxx",
             "key": "",
         }
     },
     "github": {
         "APP": {
-            "client_id": "9f743ec87cff31504cf7",
-            "secret": "ff2dd821ee9eee5ac1553c3e1f7bdbb8a82e27aa",
+            "client_id": "xxxx",
+            "secret": "xxxxx",
         },
         "SCOPE": {
             "user",
@@ -332,9 +332,9 @@ SOCIALACCOUNT_PROVIDERS = {
 STRIPE_LIVE_SECRET_KEY = (
     ""  # os.environ.get("STRIPE_LIVE_SECRET_KEY", "<your secret key>")
 )
-STRIPE_TEST_SECRET_KEY = "sk_test_51MtmdICr6bjRolxcvPygQ0Fv6h6JeqlQJi8FCUnWg4hiqHjjoL4ND8JLNz0ZJfRzitqVKeCNGeLy4mreG7mGsWH900xo6hvmrO"  # os.environ.get("STRIPE_TEST_SECRET_KEY", "")
+STRIPE_TEST_SECRET_KEY = "xxxxx"  # os.environ.get("STRIPE_TEST_SECRET_KEY", "")
 STRIPE_LIVE_MODE = False  # Change to True in production
-DJSTRIPE_WEBHOOK_SECRET = "whsec_b0a332806c0849dab6e8735be32c8460ae8d8f94ae77c99967670c091a56b720"  # Get it from the section in the Stripe dashboard where you added the webhook endpoint
+DJSTRIPE_WEBHOOK_SECRET = "xxxxxxxx"  # Get it from the section in the Stripe dashboard where you added the webhook endpoint
 DJSTRIPE_USE_NATIVE_JSONFIELD = (
     True  # We recommend setting to True for new installations
 )
