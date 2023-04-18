@@ -41,16 +41,16 @@ LOCALE_PATHS = [str(BASE_DIR / "locale")]
 # https://docs.djangoproject.com/en/dev/ref/settings/#databases
 
 DATABASES = {
-    "default": {'ENGINE':"django.db.backends.postgresql",
+    "default": {'ENGINE': "django.db.backends.postgresql",
                 'NAME': 'project',
                 'USER': 'postgres',
-                'PASSWORD': 'nehecode',
+                'PASSWORD': 'password',
                 'HOST': '127.0.0.1',
                 'PORT': '5432',
-    }
+                }
 }
 DATABASES["default"]["ATOMIC_REQUESTS"] = True
-
+# 'PASSWORD': 'nehecode',
 # https://docs.djangoproject.com/en/stable/ref/settings/#std:setting-DEFAULT_AUTO_FIELD
 DEFAULT_AUTO_FIELD = "django.db.models.BigAutoField"
 
@@ -165,7 +165,8 @@ STATIC_ROOT = str(BASE_DIR / "staticfiles")
 # https://docs.djangoproject.com/en/dev/ref/settings/#static-url
 STATIC_URL = "/static/"
 # https://docs.djangoproject.com/en/dev/ref/contrib/staticfiles/#std:setting-STATICFILES_DIRS
-STATICFILES_DIRS = [str(APPS_DIR / "static")]
+# STATICFILES_DIRS = [str(APPS_DIR / "static")]
+STATICFILES_DIRS = [os.path.join(BASE_DIR, "static")]
 # https://docs.djangoproject.com/en/dev/ref/contrib/staticfiles/#staticfiles-finders
 STATICFILES_FINDERS = [
     "django.contrib.staticfiles.finders.FileSystemFinder",
@@ -339,7 +340,7 @@ SOCIALACCOUNT_PROVIDERS = {
 
 # STRIPE
 STRIPE_LIVE_SECRET_KEY = (
-   os.environ.get("STRIPE_LIVE_SECRET_KEY", "sk_test_XXXXXXXXXX")
+    os.environ.get("STRIPE_LIVE_SECRET_KEY", "sk_test_XXXXXXXXXX")
 )
 STRIPE_TEST_SECRET_KEY = os.environ.get("STRIPE_TEST_SECRET_KEY", "sk_test_XXXXXXXXXX")
 STRIPE_LIVE_MODE = False  # Change to True in production
