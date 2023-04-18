@@ -55,7 +55,7 @@ pip install dj-stripe slippers
 
 Note: on installing slippers you need to add it to installed apps under the setting of the entry app point yeager_ai
 
-### before running update your passwor to match your postgres user
+### before running the app update your password to match your postgres user password
 
 1. locate the base.py file in the config direction and update your password for the postgres user
 

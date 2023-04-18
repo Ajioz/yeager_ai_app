@@ -8,24 +8,24 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="YeagerAI Web Applications">
     <meta name="author" content="YeagerAI LLC">
-
+    
     <link rel="icon" href="{% static 'images/favicons/favicon.ico' %}">
-
+    <link href="{% static 'assets/css/style.bundle.css' %}" rel="stylesheet" />
     {% block css %}
     <!-- Your stuff: Third-party CSS libraries go here -->
 
     <!-- This file stores project-specific CSS -->
-    <link href="{% static 'css/project.min.css' %}" rel="stylesheet">
+    <link href="{% static 'css/project.css' %}" rel="stylesheet">
     {% endblock %}
     <!-- Le javascript
     ================================================== -->
     {# Placed at the top of the document so pages load faster with defer #}
     {% block javascript %}
       <!-- Vendor dependencies bundled as one file -->
-      <script defer src="{% static 'js/vendors.min.js' %}"></script>
+      <script defer src="{% static '/js/vendors.min.js' %}"></script>
 
       <!-- place project specific Javascript in this file -->
-      <script defer src="{% static 'js/project.min.js' %}"></script>
+      <script defer src="{% static 'js/project.js' %}"></script>
 
     {% endblock javascript %}
 
