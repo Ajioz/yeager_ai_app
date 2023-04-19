@@ -1,8 +1,37 @@
-{% extends "base.html" %}
-{% load slippers %}
+{% extends "base.html" %} 
+{% load slippers %} 
 {% block content %}
-{% #card heading="I am the heading" %}
-  <span>Hello {{ name|title }}!</span>
-{% /card %}
 
+<div class="page d-flex flex-row flex-column-fluid">
+    {% #sidy %}
+    {% /sidy %}
+    <div class="wrapper d-flex flex-column flex-row-fluid" id="kt_wrapper">
+        {% comment %} headers goes here  {% endcomment %}
+
+        <div class="content d-flex flex-column flex-column-fluid" id ="kt_content">
+            <div class="container-xxl" id="kt_content_container">
+                {% #breadcrumb %}
+                {% /breadcrumb %}
+                {% #profiler %}
+                {% /profiler %}
+                {% #middle %}
+                {% /middle %}
+                <div class="row g-6 g-xl-9">
+                    {% for ch in '01234' %}
+                    {% #card %}
+                    {% /card %}
+                    {% endfor %}
+                </div>
+                {% #paginate%} 
+                {% /paginate%} 
+                {% #modalhome%} 
+                {% /modalhome%} 
+            </div>
+    
+        </div>
+    
+        {% #footer%} 
+        {% /footer%} 
+    </div>
+</div>
 {% endblock content %}

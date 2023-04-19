@@ -1,4 +1,5 @@
 {% load static i18n %}<!DOCTYPE html>
+{% load slippers %}
 {% get_current_language as LANGUAGE_CODE %}
 <html lang="{{ LANGUAGE_CODE }}">
   <head>
@@ -10,11 +11,11 @@
     <meta name="author" content="YeagerAI LLC">
     
     <link rel="icon" href="{% static 'images/favicons/favicon.ico' %}">
-    <link href="{% static 'assets/css/style.bundle.css' %}" rel="stylesheet" />
     {% block css %}
     <!-- Your stuff: Third-party CSS libraries go here -->
-
+    
     <!-- This file stores project-specific CSS -->
+    <link href="{% static 'assets/css/style.bundle.css' %}" rel="stylesheet" />
     <link href="{% static 'css/project.css' %}" rel="stylesheet">
     {% endblock %}
     <!-- Le javascript
@@ -26,13 +27,36 @@
 
       <!-- place project specific Javascript in this file -->
       <script defer src="{% static 'js/project.js' %}"></script>
+      <script src="{% static 'assets/plugins/global/plugins.bundle.js' %}"></script>
+      {% comment %} <script src="{% static 'assets/js/scripts.bundle.js' %}"></script> {% endcomment %}
+      <script src="{% static 'assets/plugins/custom/datatables/datatables.bundle.js' %}"></script>
+      <script src="{% static 'assets/js/custom/pages/user-profile/general.js ' %}"></script>
+      <script src="{% static 'assets/js/widgets.bundle.js ' %}"></script>
+      <script src="{% static 'assets/js/custom/widgets.js ' %}"></script>
+      <script src="{% static 'assets/js/custom/apps/chat/chat.js ' %}"></script>
+      <script src="{% static 'assets/js/custom/utilities/modals/upgrade-plan.js ' %}"></script>
+      <script src="{% static 'assets/js/custom/utilities/modals/create-app.js ' %}"></script>
+      <script src="{% static 'assets/js/custom/utilities/modals/offer-a-deal/type.js ' %}"></script>
+      <script src="{% static 'assets/js/custom/utilities/modals/offer-a-deal/details.js ' %}"></script>
+      <script src="{% static 'assets/js/custom/utilities/modals/offer-a-deal/finance.js ' %}"></script>
+      <script src="{% static 'assets/js/custom/utilities/modals/offer-a-deal/complete.js ' %}"></script>
+      <script src="{% static 'assets/js/custom/utilities/modals/offer-a-deal/main.js ' %}"></script>
+      <script src="{% static 'assets/js/custom/utilities/modals/create-project/type.js ' %}"></script>
+      <script src="{% static 'assets/js/custom/utilities/modals/create-project/budget.js ' %}"></script>
+      <script src="{% static 'assets/js/custom/utilities/modals/create-project/settings.js ' %}"></script>
+      <script src="{% static 'assets/js/custom/utilities/modals/create-project/team.js ' %}"></script>
+      <script src="{% static 'assets/js/custom/utilities/modals/create-project/targets.js ' %}"></script>
+      <script src="{% static 'assets/js/custom/utilities/modals/create-project/files.js ' %}"></script>
+      <script src="{% static 'assets/js/custom/utilities/modals/create-project/complete.js ' %}"></script>
+      <script src="{% static 'assets/js/custom/utilities/modals/create-project/main.js ' %}"></script>
+      <script src="{% static 'assets/js/custom/utilities/modals/users-search.js ' %}"></script>
+      <!--end::Custom Javascript-->
 
     {% endblock javascript %}
 
   </head>
-
-  <body>
-
+  <body id="kt_body" style="" class="header-fixed header-tablet-and-mobile-fixed aside-fixed aside-secondary-enabled" data-new-gr-c-s-check-loaded="14.1105.0" data-gr-ext-installed="">
+    {% comment %} 
     <div class="mb-1">
       <nav class="navbar navbar-expand-md navbar-light bg-light">
         <div class="container-fluid">
@@ -75,26 +99,28 @@
         </div>
       </nav>
 
-    </div>
+    </div> 
+    {% endcomment %}
 
-    <div class="container">
+    <div class="d-flex flex-column flex-root">
 
-      {% if messages %}
-        {% for message in messages %}
-          <div class="alert alert-dismissible {% if message.tags %}alert-{{ message.tags }}{% endif %}">
-            {{ message }}
-            <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
-          </div>
-        {% endfor %}
-      {% endif %}
+        {% if messages %}
+          {% for message in messages %}
+            <div class="alert alert-dismissible {% if message.tags %}alert-{{ message.tags }}{% endif %}">
+              {{ message }}
+              <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+            </div>
+          {% endfor %}
+        {% endif %}
 
-      {% block content %}
-        <p>Use this document as a way to quick start any new project.</p>
-      {% endblock content %}
+        {% block content %}
+          <p>Use this document as a way to quick start any new project.</p>
+        {% endblock content %}
 
     </div> <!-- /container -->
 
-    {% block modal %}{% endblock modal %}
+    {% block modal %}
+    {% endblock modal %} 
 
     {% block inline_javascript %}
     {% comment %}

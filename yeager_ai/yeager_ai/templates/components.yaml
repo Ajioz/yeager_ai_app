@@ -1,2 +1,10 @@
 components:
   card: "partials/card.html"
+  header: "partials/Header/header.html"
+  breadcrumb: "partials/Home/breadcrumb.html"
+  middle: "partials/Home/middle.html"
+  profiler: "partials/Home/profiler.html"
+  paginate: "partials/Home/paginate.html"
+  modalhome: "partials/Home/modalhome.html"
+  sidy: "partials/SideBar/sidy.html"
+  footer: "partials/Footer/footer.html"
