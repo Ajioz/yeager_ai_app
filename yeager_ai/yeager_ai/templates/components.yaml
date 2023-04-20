@@ -1,2 +1,3 @@
 components:
   card: "partials/card.html"
+  nav: "layout/partials/header-layout/header/_navbar.html"

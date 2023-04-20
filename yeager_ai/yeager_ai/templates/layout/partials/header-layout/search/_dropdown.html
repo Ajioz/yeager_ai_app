@@ -1,4 +1,4 @@
-
+{%load static%}
 <!--begin::Search-->
 <div id="kt_header_search" class="header-search d-flex align-items-stretch" data-kt-search-keypress="true"
 	data-kt-search-min-length="2" data-kt-search-enter="enter" data-kt-search-layout="menu" data-kt-menu-trigger="auto"
@@ -7,7 +7,7 @@
 	<div class="d-flex align-items-center" data-kt-search-element="toggle" id="kt_header_search_toggle">
 		<div
 			class="btn btn-icon btn-custom btn-icon-muted btn-active-light btn-active-color-primary w-35px h-35px w-md-40px h-md-40px">
-			{% getSvgIcon 'duotune/general/gen021.svg' 'svg-icon svg-icon-1' %}
+			{% static 'duotune/general/gen021.svg' 'svg-icon svg-icon-1' %}
 		</div>
 	</div>
 	<!--end::Search toggle-->
